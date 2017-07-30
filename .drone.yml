@@ -19,7 +19,9 @@ pipeline:
     image: plugins/docker
     repo: peloton/drone-google-chat
     username: josmo
-    tags: [ "latest", ${DRONE_BUILD_NUMBER} ]
+    tag:
+      - latest
+      - ${DRONE_BUILD_NUMBER}
     secrets: [ docker_password ]
     when:
       branch: master
