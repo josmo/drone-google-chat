@@ -17,8 +17,13 @@ type client struct {
 	url string
 }
 
-func NewClient(url string, token string) Client {
-	fullURL := url + "&token=" + token
+func NewClient(url string, key string, token string, conversationKey string) Client {
+	fullURL := ""
+	if conversationKey == "" {
+		fullURL = url + "/webhooks?key=" + key + "&token=" + token
+	} else {
+	fullURL = url + "/conversations/" + conversationKey + "/webhooks?key=" + key + "&token=" + token
+	}
 	return &client{fullURL}
 }
 

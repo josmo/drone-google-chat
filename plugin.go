@@ -31,6 +31,8 @@ type (
 		Webhook   string
 		Template  string
 		Token     string
+		Key       string
+		ConversationKey string
 	}
 
 	Job struct {
@@ -59,7 +61,7 @@ func (p Plugin) Exec() error {
 		text = txt
 	}
 
-	client := google_chat.NewClient(p.Config.Webhook, p.Config.Token)
+	client := google_chat.NewClient(p.Config.Webhook, p.Config.Key, p.Config.Token, p.Config.ConversationKey)
 
 	return client.SendMessage(&google_chat.Message{text})
 }
