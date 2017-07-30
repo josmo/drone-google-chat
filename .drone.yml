@@ -1,0 +1,48 @@
+workspace:
+  base: /go
+  path: src/github.com/josmo/drone-google-chat
+pipeline:
+  test:
+    image: golang:1.8
+    commands:
+      - go vet
+      - go test -cover -coverprofile=coverage.out
+
+  build:
+    image: golang:1.8
+    commands: sh .drone.sh
+    when:
+      branch: master
+      event: push
+
+  publish_amd64:
+    image: plugins/docker
+    repo: peloton/drone-google-chat
+    username: josmo
+    tags: [ "latest", ${DRONE_BUILD_NUMBER} ]
+    secrets: [ docker_password ]
+    when:
+      branch: master
+      event: push
+
+  publish_armhf:
+    image: plugins/docker
+    repo: peloton/drone-google-chat
+    username: josmo
+    tags: [ "linux-arm" ]
+    dockerfile: Dockerfile.armhf
+    secrets: [ docker_password ]
+    when:
+      branch: master
+      event: push
+
+  publish_aarch64:
+    image: plugins/docker
+    repo: peloton/drone-google-chat
+    username: josmo
+    tags: [ "linux-arm64" ]
+    dockerfile: Dockerfile.aarch64
+    secrets: [ docker_password ]
+    when:
+      branch: master
+      event: push
