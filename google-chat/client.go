@@ -22,7 +22,7 @@ func NewClient(url string, key string, token string, conversationKey string) Cli
 	if conversationKey == "" {
 		fullURL = url + "/webhooks?key=" + key + "&token=" + token
 	} else {
-	fullURL = url + "/conversations/" + conversationKey + "/webhooks?key=" + key + "&token=" + token
+		fullURL = url + "/webhooks?key=" + key + "&token=" + token + "&conversation_key=" + conversationKey
 	}
 	return &client{fullURL}
 }
