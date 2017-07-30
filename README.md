@@ -4,6 +4,8 @@
 
 Drone plugin for sending google chat notifications. For the usage information and a listing of the available options please reference TBD.
 
+This plugin is currently experimental since the google chat apis haven't been released
+
 ## Build
 
 Build the binary with the following commands:
