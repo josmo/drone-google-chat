@@ -1,10 +1,11 @@
 package google_chat
 
 import (
-"bytes"
-"encoding/json"
-"net/http"
+	"bytes"
+	"encoding/json"
+	"net/http"
 )
+
 type Message struct {
 	Text string `json:"text"`
 }
@@ -36,10 +37,10 @@ func (c *client) SendMessage(msg *Message) error {
 	if err != nil {
 		return err
 	}
-    //TODO: fix error and give better feedback
+	//TODO: fix error and give better feedback
 	if resp.StatusCode != 200 {
-	//	//t, _ := ioutil.ReadAll(resp.Body)
-	//	//return &Error{resp.StatusCode, string(t)}
+		//	//t, _ := ioutil.ReadAll(resp.Body)
+		//	//return &Error{resp.StatusCode, string(t)}
 	}
 
 	return nil

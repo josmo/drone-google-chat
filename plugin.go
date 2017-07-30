@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"strings"
 	"github.com/josmo/drone-google-chat/google-chat"
+	"strings"
 )
 
 type (
@@ -28,10 +28,10 @@ type (
 	}
 
 	Config struct {
-		Webhook   string
-		Template  string
-		Token     string
-		Key       string
+		Webhook         string
+		Template        string
+		Token           string
+		Key             string
 		ConversationKey string
 	}
 
@@ -47,10 +47,7 @@ type (
 	}
 )
 
-
-
 func (p Plugin) Exec() error {
-
 
 	text := message(p.Repo, p.Build)
 	if p.Config.Template != "" {

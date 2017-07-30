@@ -24,18 +24,18 @@ func main() {
 			EnvVar: "GOOGLE_CHAT_WEBHOOK,PLUGIN_WEBHOOK",
 		},
 		cli.StringFlag{
-			Name: "token",
-			Usage: "google chat token",
+			Name:   "token",
+			Usage:  "google chat token",
 			EnvVar: "GOOGLE_CHAT_TOKEN, PLUGIN_TOKEN",
 		},
 		cli.StringFlag{
-			Name: "key",
-			Usage: "google chat key",
+			Name:   "key",
+			Usage:  "google chat key",
 			EnvVar: "GOOGLE_CHAT_KEY, PLUGIN_KEY",
 		},
 		cli.StringFlag{
-			Name: "conversation.key",
-			Usage: "google chat conversation key",
+			Name:   "conversation.key",
+			Usage:  "google chat conversation key",
 			EnvVar: "GOOGLE_CONVERSATION_KEY, PLUGIN_CONVERSATION_KEY",
 		},
 		cli.StringFlag{
@@ -161,10 +161,10 @@ func run(c *cli.Context) error {
 			Started: c.Int64("job.started"),
 		},
 		Config: Config{
-			Webhook:   c.String("webhook"),
-			Template:  c.String("template"),
-			Token:     c.String("token"),
-			Key:       c.String("key"),
+			Webhook:         c.String("webhook"),
+			Template:        c.String("template"),
+			Token:           c.String("token"),
+			Key:             c.String("key"),
 			ConversationKey: c.String("conversation.key"),
 		},
 	}
