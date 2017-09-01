@@ -1,0 +1,12 @@
+FROM microsoft/nanoserver:latest
+
+ENV GODEBUG=netdns=go
+
+LABEL org.label-schema.version=latest
+LABEL org.label-schema.vcs-url="https://github.com/josmo/drone-google-chat.git"
+LABEL org.label-schema.name="Drone Google Chat"
+LABEL org.label-schema.vendor="Josmo"
+LABEL org.label-schema.schema-version="1.0"
+
+ADD release/windows/amd64/drone-google-chat /bin/
+ENTRYPOINT [ "/bin/drone-google-chat" ]

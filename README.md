@@ -1,6 +1,10 @@
 # drone-google-chat
 
 [![Build Status](https://drone.seattleslow.com/api/badges/josmo/drone-google-chat/status.svg)](https://drone.seattleslow.com/josmo/drone-google-chat)
+[![Join the chat at https://gitter.im/drone/drone](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/drone/drone)
+[![Go Doc](https://godoc.org/github.com/josmo/drone-google-chat?status.svg)](http://godoc.org/github.com/josmo/drone-google-chat)
+[![Go Report](https://goreportcard.com/badge/github.com/josmo/drone-google-chat)](https://goreportcard.com/report/github.com/josmo/drone-google-chat)
+[![](https://images.microbadger.com/badges/image/peloton/drone-google-chat.svg)](https://microbadger.com/images/peloton/drone-google-chat "Get your own image badge on microbadger.com")
 
 Drone plugin for sending google chat notifications. For the usage information and a listing of the available options please reference TBD.
 
@@ -11,8 +15,7 @@ This plugin is currently experimental since the google chat apis haven't been re
 Build the binary with the following commands:
 
 ```
-go build
-go test
+drone exec
 ```
 
 ## Docker
@@ -20,7 +23,7 @@ go test
 Build the docker image with the following commands:
 
 ```
-CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -tags netgo
+drone exec
 docker build -t peloton/drone-google-chat .
 ```
 

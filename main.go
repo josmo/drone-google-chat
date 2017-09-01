@@ -9,7 +9,7 @@ import (
 	"github.com/urfave/cli"
 )
 
-var build = "0" // build number set at compile-time
+var build string // build number set at compile-time
 
 func main() {
 	app := cli.NewApp()
