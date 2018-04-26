@@ -19,12 +19,7 @@ type client struct {
 }
 
 func NewClient(url string, key string, token string, conversationKey string) Client {
-	fullURL := ""
-	if conversationKey == "" {
-		fullURL = url + "/webhooks?key=" + key + "&token=" + token
-	} else {
-		fullURL = url + "/webhooks?key=" + key + "&token=" + token + "&conversation_key=" + conversationKey
-	}
+	fullURL = url + "/messages?key=" + key + "&token=" + token
 	return &client{fullURL}
 }
 
