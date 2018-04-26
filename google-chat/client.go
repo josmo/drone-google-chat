@@ -19,7 +19,12 @@ type client struct {
 }
 
 func NewClient(url string, key string, token string, conversationKey string) Client {
-	fullURL = url + "/messages?key=" + key + "&token=" + token
+	fullURL := ""
+	if conversationKey == "" {
+		fullURL = url + "/messages?key=" + key + "&token=" + token
+	} else {
+		fullURL = url + "/messages?key=" + key + "&token=" + token + "&threadKey=" + conversationKey
+	}
 	return &client{fullURL}
 }
 
