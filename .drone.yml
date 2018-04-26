@@ -53,34 +53,36 @@ pipeline:
     image: plugins/docker
     username: josmo
     repo: peloton/drone-google-chat
-    tags: [ latest, 1.0.0, 1.0, 1 ]
+    auto_tag: true
     secrets: [ docker_password ]
     dockerfile: Dockerfile
     when:
       branch: master
-      event: push
+      event: [ push, tag ]
 
   publish_linux_arm64:
     image: plugins/docker
     username: josmo
     repo: peloton/drone-google-chat
-    tags: [ linux-arm64 ]
+    auto_tag: true
+    auto_tag_suffix: linux-arm64
     secrets: [ docker_password ]
     dockerfile: Dockerfile.arm64
     when:
       branch: master
-      event: push
+      event: [ push, tag ]
 
   publish_linux_arm:
     image: plugins/docker
     username: josmo
     repo: peloton/drone-google-chat
-    tags: [ linux-arm ]
+    auto_tag: true
+    auto_tag_suffix: linux-arm
     secrets: [ docker_password ]
     dockerfile: Dockerfile.arm
     when:
       branch: master
-      event: push
+      event: [ push, tag ]
 
   # publish_windows_amd64:
   #   image: plugins/docker
