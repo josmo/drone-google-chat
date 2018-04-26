@@ -37,7 +37,7 @@ and the token is just the token itself.
 
 ```
 docker run --rm \
-  -e GOOGLE_CHAT_WEBHOOK=https://dynamite.sandbox.googleapis.com/v1/rooms/... \
+  -e GOOGLE_CHAT_WEBHOOK=https://chat.googleapis.com/v1/spaces/... \
   -e GOOGLE_CHAT_KEY=somekey
   -e GOOGLE_CHAT_TOKEN=sometoken
   -e DRONE_REPO_OWNER=octocat \
