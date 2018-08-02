@@ -23,12 +23,28 @@
   version = "v2.0.2"
 
 [[projects]]
+  branch = "master"
+  digest = "1:424d6a3ee46171455054a1d821c658c22802a798ba8e687fdc2edaca9eb30c8a"
+  name = "github.com/drone/drone-template-lib"
+  packages = ["template"]
+  pruneopts = "UT"
+  revision = "5748d3149f4859c6d6cf43edb4fa35bba379c918"
+
+[[projects]]
   digest = "1:70e697d67ccaec45e16bac3a32380ebcd9e7e071079c60d0171d42cf1cf9748a"
   name = "github.com/joho/godotenv"
   packages = ["."]
   pruneopts = "UT"
   revision = "a79fa1e548e2c689c241d10173efd51e5d689d5b"
   version = "v1.2.0"
+
+[[projects]]
+  digest = "1:40e195917a951a8bf867cd05de2a46aaf1806c50cf92eebf4c16f78cd196f747"
+  name = "github.com/pkg/errors"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "645ef00459ed84a119197bfb8d8205042c6df63d"
+  version = "v0.8.0"
 
 [[projects]]
   digest = "1:b24d38b282bacf9791408a080f606370efa3d364e4b5fd9ba0f7b87786d3b679"
@@ -62,7 +78,7 @@
   analyzer-version = 1
   input-imports = [
     "github.com/Sirupsen/logrus",
-    "github.com/aymerick/raymond",
+    "github.com/drone/drone-template-lib/template",
     "github.com/joho/godotenv",
     "github.com/urfave/cli",
   ]

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/josmo/drone-google-chat/google-chat"
 	"strings"
+	"github.com/drone/drone-template-lib/template"
 )
 
 type (
@@ -51,7 +52,7 @@ func (p Plugin) Exec() error {
 
 	text := message(p.Repo, p.Build)
 	if p.Config.Template != "" {
-		txt, err := RenderTrim(p.Config.Template, p)
+		txt, err := template.RenderTrim(p.Config.Template, p)
 		if err != nil {
 			return err
 		}
