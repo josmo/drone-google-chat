@@ -73,7 +73,7 @@ steps:
   - name: publish_linux_amd64
     pull: default
     image: plugins/docker
-    depends_on: [ buildl_linux_amd64 ]
+    depends_on: [ build_linux_amd64 ]
     settings:
       auto_tag: true
       dockerfile: Dockerfile
