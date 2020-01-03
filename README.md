@@ -3,7 +3,7 @@
 [![Build Status](https://cloud.drone.io/api/badges/josmo/drone-google-chat/status.svg)](https://cloud.drone.io/josmo/drone-google-chat)
 [![Go Doc](https://godoc.org/github.com/josmo/drone-google-chat?status.svg)](http://godoc.org/github.com/josmo/drone-google-chat)
 [![Go Report](https://goreportcard.com/badge/github.com/josmo/drone-google-chat)](https://goreportcard.com/report/github.com/josmo/drone-google-chat)
-[![](https://images.microbadger.com/badges/image/peloton/drone-google-chat.svg)](https://microbadger.com/images/peloton/drone-google-chat "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/pelotech/drone-google-chat.svg)](https://microbadger.com/images/pelotech/drone-google-chat "Get your own image badge on microbadger.com")
 
 Drone plugin for sending google chat notifications. For the usage information and a listing of the available options please reference TBD.
 
@@ -23,7 +23,7 @@ Build the docker image with the following commands:
 
 ```
 drone exec
-docker build -t peloton/drone-google-chat .
+docker build -t pelotech/drone-google-chat .
 ```
 
 
@@ -48,7 +48,7 @@ docker run --rm \
   -e DRONE_BUILD_STATUS=success \
   -e DRONE_BUILD_LINK=http://github.com/octocat/hello-world \
   -e DRONE_TAG=1.0.0 \
-  peloton/drone-google-chat
+  pelotech/drone-google-chat
 ```
 
 ### Contribution
