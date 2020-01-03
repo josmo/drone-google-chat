@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
+	"github.com/drone/drone-template-lib/template"
 	"github.com/josmo/drone-google-chat/google-chat"
 	"strings"
-	"github.com/drone/drone-template-lib/template"
 )
 
 type (

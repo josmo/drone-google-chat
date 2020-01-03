@@ -11,23 +11,22 @@ platform:
   arch: amd64
 
 steps:
-  - name: deps
+  - name: mod_download
     pull: always
-    image: golang:1.10
+    image: golang:1.13
     commands:
-      - go get -u github.com/golang/dep/cmd/dep
-      - dep ensure
+      - GGO111MODULE=on go mod download
 
   - name: test
     pull: default
-    image: golang:1.10
-    depends_on: [ deps ]
+    image: golang:1.13
+    depends_on: [ mod_download ]
     commands:
       - go test -cover -coverprofile=coverage.out
 
   - name: build_linux_amd64
     pull: default
-    image: golang:1.10
+    image: golang:1.13
     depends_on: [ test ]
     commands:
       - |
@@ -43,7 +42,7 @@ steps:
 
   - name: build_linux_arm64
     pull: default
-    image: golang:1.10
+    image: golang:1.13
     depends_on: [ test ]
     commands:
       - |
@@ -59,7 +58,7 @@ steps:
 
   - name: build_linux_arm
     pull: default
-    image: golang:1.10
+    image: golang:1.13
     depends_on: [ test ]
     commands:
       - |
